@@ -1,7 +1,9 @@
 Silverstripe Kube Theme
 =======================
 
-A simple Silverstripe theme using the Kube CSS framework
+A simple Silverstripe theme using the Kube CSS framework, found at:
+
+http://imperavi.com/kube
 
 ## Using this theme
 
