@@ -1,9 +1,9 @@
 {
-  "name": "i-lateral/silverstripe-themes-kube",
-  "description": "A simple Silverstripe theme that makes use of the Kube CSS framework (400).",
+    "name": "i-lateral/silverstripe-themes-kube",
+    "description": "A simple Silverstripe theme that makes use of the Kube CSS framework (400).",
 	"type": "silverstripe-theme",
 	"homepage": "http://github.com/i-lateral/silverstripe-themes-kube",
-	"keywords": ["silverstripe", "nav", "menus", "navigation"],
+	"keywords": ["silverstripe", "theme", "kube"],
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
@@ -20,6 +20,6 @@
         "silverstripe/framework": ">=3.0"
 	},
 	"extra": {
-		"installer-name": "themes/kube"
+		"installer-name": "kube"
 	}
 }
