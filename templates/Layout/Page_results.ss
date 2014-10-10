@@ -35,35 +35,7 @@
         <p>Sorry, your search query did not return any results.</p>
     <% end_if %>
 
-    <% if $Results.MoreThanOnePage %>
-        <ul class="pagination">
-            <% if $Results.NotFirstPage %>
-                <li class="prev">
-                    <a href="$Results.PrevLink" title="View the previous page">
-                        &larr;
-                    </a>
-                </li>
-            <% end_if %>
-
-            <% loop $Results.Pages %>
-                <li>
-                <% if $CurrentBool %>
-                    <span>$PageNum</span>
-                <% else %>
-                    <a href="$Link" title="View page number $PageNum" class="go-to-page">
-                        $PageNum
-                    </a>
-                <% end_if %>
-                </li>
-            <% end_loop %>
-
-            <% if $Results.NotLastPage %>
-                <li class="next">
-                    <a href="$Results.NextLink" title="View the next page">
-                        &rarr;
-                    </a>
-                </li>
-            <% end_if %>
-        </ul>
-    <% end_if %>
+    <% with $Results %>
+        <% include Pagination %>
+    <% end_with %>
 </div>
