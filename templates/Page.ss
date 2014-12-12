@@ -17,6 +17,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         $MetaTags(false)
+        
+        <meta property="og:title" content="{$Title}" />
+        
+        <% if $SiteConfig.Title %>
+            <meta property="og:site_name" content="{$SiteConfig.Title}"/>
+        <% end_if %>
+        
+        <% if $Content %>
+            <meta property="og:description" content="{$Content.FirstParagraph}" />
+        <% end_if %>
+        
+        <% if $AbsoluteLink %>
+            <meta property="og:url" content="{$AbsoluteLink}" />
+        <% end_if %>
+        
+        <% if $SummaryImage %>
+			<meta property="og:image" content="{$BaseHref}{$SummaryImage.SetWidth(550).FileName}" />
+        <% else_if $Image %>
+			<meta property="og:image" content="{$BaseHref}{$Image.SetWidth(550).FileName}" />
+		<% else_if $Images.exists %>
+			<meta property="og:image" content="{$BaseHref}{$Images.first.SetWidth(550).FileName}" />
+        <% else_if $Parent.SummaryImage %>
+			<meta property="og:image" content="{$BaseHref}{$Parent.SummaryImage.SetWidth(550).FileName}" />
+        <% end_if %>
 
         <link rel="icon" sizes="16x16" href="{$ThemeDir}/images/icon-16.png" />
         <link rel="icon" sizes="32x32" href="{$ThemeDir}/images/icon-32.png" />
@@ -80,6 +104,5 @@
         <% require javascript('framework/thirdparty/jquery/jquery.js') %>
         <% require javascript('themes/kube/javascript/kube/navigation-toggle.js') %>
         <% require javascript('themes/kube/javascript/script.js') %>
-
     </body>
 </html>
