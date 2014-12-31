@@ -22,7 +22,7 @@
         <% if $Actions %>
             <div class="Actions">
                 <% loop $Actions %>
-                    $Field
+                    $addExtraClass('btn').Field
                 <% end_loop %>
             </div>
         <% end_if %>
