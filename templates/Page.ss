@@ -40,6 +40,8 @@
 			<meta property="og:image" content="{$BaseHref}{$Images.first.SetWidth(550).FileName}" />
         <% else_if $Parent.SummaryImage %>
 			<meta property="og:image" content="{$BaseHref}{$Parent.SummaryImage.SetWidth(550).FileName}" />
+        <% else_if $SiteConfig.Logo %>
+			<meta property="og:image" content="{$BaseHref}{$SiteConfig.Logo.SetWidth(550).FileName}" />
         <% end_if %>
 
         <link rel="icon" sizes="16x16" href="{$ThemeDir}/images/icon-16.png" />
